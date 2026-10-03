@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7fb">
+    <meta name="description" content="A clear, contributor-friendly view of Mona's team projects.">
+    <title>Project Pulse</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Project Pulse home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>pulse<span class="brand-period">.</span></span>
+        </a>
+        <div class="workspace-label">
+          <span class="workspace-dot" aria-hidden="true"></span>
+          Mona's workspace
+        </div>
+        <a class="topbar-link" href="#projects">Team overview <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>YOUR TEAM, IN SYNC</p>
+            <h1 id="page-title">Project Pulse</h1>
+            <p class="hero-description">A little clarity on what’s moving, what needs a hand, and where we’re headed next.</p>
+          </div>
+          <div class="hero-aside">
+            <span class="live-indicator"><span aria-hidden="true"></span>TEAM SNAPSHOT</span>
+            <p>One view. Shared momentum.</p>
+          </div>
+        </section>
+
+        <section class="overview" aria-label="Project overview">
+          <article class="metric-card metric-card-primary">
+            <div class="metric-topline"><span class="metric-label">Active projects</span><span class="metric-icon icon-active" aria-hidden="true">↗</span></div>
+            <p class="metric-value" id="active-count">—</p>
+            <p class="metric-footnote">Moving forward together</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-topline"><span class="metric-label">Need attention</span><span class="metric-icon icon-attention" aria-hidden="true">!</span></div>
+            <p class="metric-value" id="attention-count">—</p>
+            <p class="metric-footnote">High priority projects</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-topline"><span class="metric-label">On the board</span><span class="metric-icon icon-total" aria-hidden="true">▦</span></div>
+            <p class="metric-value" id="total-count">—</p>
+            <p class="metric-footnote">Shared team initiatives</p>
+          </article>
+        </section>
+
+        <section class="projects-section" id="projects" aria-labelledby="projects-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">THE BIG PICTURE</p>
+              <h2 id="projects-title">Projects <span class="heading-count" id="project-count">—</span></h2>
+            </div>
+            <p class="section-note">A quick read on the work that matters.</p>
+          </div>
+          <p class="load-message" id="load-message" role="status" aria-live="polite">Gathering the latest project pulse…</p>
+          <div class="dashboard project-grid" id="project-grid" aria-busy="true"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span class="footer-mark" aria-hidden="true">✳</span>
+        <p>Good work happens when everyone has the same picture.</p>
+        <span class="footer-caption">MADE FOR THE TEAM</span>
+      </footer>
+    </div>
+    <script>
+      const projectGrid = document.querySelector("#project-grid");
+      const loadMessage = document.querySelector("#load-message");
+
+      function createElement(tagName, className, text) {
+        const element = document.createElement(tagName);
+        if (className) element.className = className;
+        if (text !== undefined) element.textContent = text;
+        return element;
+      }
+
+      function normalize(value) {
+        return String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      }
+
+      function createProjectCard(project, index) {
+        const card = createElement("article", "project-card");
+        card.style.setProperty("--card-index", index);
+
+        const top = createElement("div", "card-top");
+        const category = createElement("span", "card-label", `PROJECT ${String(index + 1).padStart(2, "0")}`);
+        const priority = createElement("span", `priority-badge priority-${normalize(project.priority)}`);
+        priority.append(createElement("span", "priority-dot"));
+        priority.append(document.createTextNode(`${project.priority} priority`));
+        top.append(category, priority);
+
+        const title = createElement("h3", "project-name", project.name);
+        const summary = createElement("p", "project-summary", project.summary);
+
+        const details = createElement("dl", "project-details");
+        const owner = createElement("div", "detail-item");
+        owner.append(createElement("dt", "", "OWNER"));
+        owner.append(createElement("dd", "owner-value", project.owner));
+        const activity = createElement("div", "detail-item");
+        activity.append(createElement("dt", "", "RECENT ACTIVITY"));
+        activity.append(createElement("dd", "activity-value", project.recentActivity));
+        details.append(owner, activity);
+
+        const footer = createElement("div", "card-footer");
+        const status = createElement("span", `status-badge status-${normalize(project.status)}`);
+        status.append(createElement("span", "status-dot"));
+        status.append(document.createTextNode(project.status));
+        footer.append(status, createElement("span", "card-arrow", "↗"));
+
+        card.append(top, title, summary, details, footer);
+        return card;
+      }
+
+      function isValidProject(project) {
+        return project && ["name", "owner", "status", "recentActivity", "priority", "summary"]
+          .every((field) => typeof project[field] === "string" && project[field].trim().length > 0);
+      }
+
+      function showError(message) {
+        loadMessage.textContent = message;
+        loadMessage.className = "load-message load-error";
+        projectGrid.setAttribute("aria-busy", "false");
+      }
+
+      async function loadProjects() {
+        try {
+          const response = await fetch("project-data.json");
+          if (!response.ok) {
+            throw new Error(`Project data could not be loaded (HTTP ${response.status}).`);
+          }
+
+          const data = await response.json();
+          if (!data || !Array.isArray(data.projects) || !data.projects.every(isValidProject)) {
+            throw new Error("Project data is incomplete. Check the projects list and its required fields.");
+          }
+
+          const projects = data.projects;
+          document.querySelector("#total-count").textContent = String(projects.length).padStart(2, "0");
+          document.querySelector("#project-count").textContent = String(projects.length).padStart(2, "0");
+          document.querySelector("#active-count").textContent = String(
+            projects.filter((project) => normalize(project.status) !== "complete").length
+          ).padStart(2, "0");
+          document.querySelector("#attention-count").textContent = String(
+            projects.filter((project) => normalize(project.priority) === "high").length
+          ).padStart(2, "0");
+
+          if (projects.length === 0) {
+            loadMessage.textContent = "No projects yet. When the team adds work, it will show up here.";
+            loadMessage.classList.add("load-empty");
+          } else {
+            loadMessage.hidden = true;
+            projectGrid.append(...projects.map(createProjectCard));
+          }
+          projectGrid.setAttribute("aria-busy", "false");
+        } catch (error) {
+          console.error("Unable to load Project Pulse data:", error);
+          showError(error instanceof Error ? error.message : "Project data could not be loaded.");
+        }
+      }
+
+      loadProjects();
+    </script>
+  </body>
+</html>

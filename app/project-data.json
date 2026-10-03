@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "name": "Community Hub Refresh",
+      "owner": "Avery Chen",
+      "status": "In progress",
+      "recentActivity": "New member flow reviewed yesterday",
+      "priority": "High",
+      "summary": "Make it easier for new contributors to find their people and get started."
+    },
+    {
+      "name": "Open Data Toolkit",
+      "owner": "Jordan Ellis",
+      "status": "In progress",
+      "recentActivity": "Data import guide updated today",
+      "priority": "Medium",
+      "summary": "Give partner teams a simpler way to explore and share community data."
+    },
+    {
+      "name": "Volunteer Onboarding",
+      "owner": "Sam Rivera",
+      "status": "Planning",
+      "recentActivity": "Kickoff notes shared Monday",
+      "priority": "High",
+      "summary": "Create a friendly, consistent first week for every new volunteer."
+    },
+    {
+      "name": "Neighborhood Grants",
+      "owner": "Taylor Brooks",
+      "status": "At risk",
+      "recentActivity": "Waiting on partner feedback",
+      "priority": "High",
+      "summary": "Help local organizers discover small grants and apply with confidence."
+    },
+    {
+      "name": "Impact Stories",
+      "owner": "Morgan Patel",
+      "status": "In progress",
+      "recentActivity": "Three community stories ready for review",
+      "priority": "Low",
+      "summary": "Celebrate the people and outcomes behind the team's work."
+    },
+    {
+      "name": "Resource Library",
+      "owner": "Casey Nguyen",
+      "status": "Complete",
+      "recentActivity": "The refreshed library launched this week",
+      "priority": "Low",
+      "summary": "Bring practical guides, templates, and tools together in one place."
+    }
+  ]
+}
