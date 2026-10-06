@@ -6,7 +6,7 @@ Now you will use the Orchestrator to delegate design and coding work so Project 
 
 ### What should the dashboard include?
 
-The dashboard should help contributors quickly understand Mona's team projects. It should include:
+The dashboard should help contributors quickly understand Alex's team projects. It should include:
 
 - A clear Project Pulse title.
 - Cards or sections for multiple projects.
@@ -118,7 +118,7 @@ The dashboard should help contributors quickly understand Mona's team projects. 
    > Push the commit.
    > ```
 
-8. Mona will check your work and post the next lesson.
+8. Alex will check your work and post the next lesson.
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

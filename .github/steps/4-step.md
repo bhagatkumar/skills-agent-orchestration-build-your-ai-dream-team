@@ -77,7 +77,7 @@ The Orchestrator is responsible for more than dispatching work. It should explai
    > Push the commit.
    > ```
 
-7. Mona will check your work and complete the exercise.
+7. Alex will check your work and complete the exercise.
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

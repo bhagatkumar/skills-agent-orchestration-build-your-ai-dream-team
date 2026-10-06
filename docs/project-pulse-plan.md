@@ -2,7 +2,7 @@
 
 ## Summary
 
-Build a lightweight, polished static dashboard that helps Mona's contributors quickly see active projects, owners, status, recent activity, priority or risk, and a short contributor-friendly summary. Use the existing custom agents through GitHub Copilot CLI: the Orchestrator coordinates, the Planner defines the work, the Designer guides the interface, and the Coder implements and validates it.
+Build a lightweight, polished static dashboard that helps Alex's contributors quickly see active projects, owners, status, recent activity, priority or risk, and a short contributor-friendly summary. Use the existing custom agents through GitHub Copilot CLI: the Orchestrator coordinates, the Planner defines the work, the Designer guides the interface, and the Coder implements and validates it.
 
 ## Ordered implementation steps
 
@@ -60,6 +60,6 @@ Build a lightweight, polished static dashboard that helps Mona's contributors qu
 
 ## Open questions
 
-- No product-specific project names, owners, statuses, activity, or priority values were provided. Use realistic, clearly illustrative sample data unless Mona supplies real examples.
+- No product-specific project names, owners, statuses, activity, or priority values were provided. Use realistic, clearly illustrative sample data unless Alex supplies real examples.
 - The brief requires a contributor-friendly summary but does not define its exact wording or a schema key. Use a `summary` field unless the Orchestrator confirms a different convention.
 - Confirm the execution environment provides `python3`; the exercise specifies that command and port `5500`.

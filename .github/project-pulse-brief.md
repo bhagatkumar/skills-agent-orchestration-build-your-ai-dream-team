@@ -1,6 +1,6 @@
 # Project Pulse dashboard brief
 
-Mona's team needs a lightweight Project Pulse dashboard for contributors.
+Alex's team needs a lightweight Project Pulse dashboard for contributors.
 
 The dashboard should help the team quickly understand:
 

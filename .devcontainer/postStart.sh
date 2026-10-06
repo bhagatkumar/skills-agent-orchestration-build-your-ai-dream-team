@@ -12,7 +12,7 @@ Starting the CLI with broad exercise permissions:
 
   copilot --allow-all --enable-all-github-mcp-tools
 
-If prompted, use /login inside Copilot CLI. Then follow Mona's current
+If prompted, use /login inside Copilot CLI. Then follow Alex's current
 step instructions in the exercise issue.
 
 MESSAGE

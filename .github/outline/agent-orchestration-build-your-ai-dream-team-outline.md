@@ -12,7 +12,7 @@
 
 ## Summary
 
-Learners use prebuilt custom agents in GitHub Copilot CLI to plan, design, build, validate, and hand off Mona's Project Pulse dashboard. The exercise focuses on using an Orchestrator to coordinate Planner, Designer, and Coder agents instead of having learners fill out agent definitions manually.
+Learners use prebuilt custom agents in GitHub Copilot CLI to plan, design, build, validate, and hand off Alex's Project Pulse dashboard. The exercise focuses on using an Orchestrator to coordinate Planner, Designer, and Coder agents instead of having learners fill out agent definitions manually.
 
 ## Learning objectives
 
@@ -71,7 +71,7 @@ The dev container should:
 
 ## Story
 
-Mona's team needs a lightweight **Project Pulse** dashboard that shows project names, owners, status, recent activity, priorities, and contributor-friendly summaries. The learner will use GitHub Copilot CLI and custom agents to orchestrate the work: Planner creates the plan, Designer guides the experience, Coder builds the static files, and Orchestrator validates and reports the final runnable dashboard.
+Alex's team needs a lightweight **Project Pulse** dashboard that shows project names, owners, status, recent activity, priorities, and contributor-friendly summaries. The learner will use GitHub Copilot CLI and custom agents to orchestrate the work: Planner creates the plan, Designer guides the experience, Coder builds the static files, and Orchestrator validates and reports the final runnable dashboard.
 
 ## Step 1: Meet the agent team
 

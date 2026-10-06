@@ -39,7 +39,7 @@ if [ ! -f docs/agent-team.md ]; then
   cat > docs/agent-team.md <<'EOF'
 # Agent team
 
-Replace this starter text with a summary of the custom agents you will use to build Mona's Project Pulse dashboard.
+Replace this starter text with a summary of the custom agents you will use to build Alex's Project Pulse dashboard.
 
 Include:
 

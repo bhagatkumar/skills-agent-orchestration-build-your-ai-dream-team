@@ -2,7 +2,7 @@
 
 You completed **Agent Orchestration: Build Your AI Dream Team**. :tada:
 
-You used custom agents in GitHub Copilot CLI to plan, design, build, validate, and hand off Mona's Project Pulse dashboard.
+You used custom agents in GitHub Copilot CLI to plan, design, build, validate, and hand off Alex's Project Pulse dashboard.
 
 ## What you learned
 

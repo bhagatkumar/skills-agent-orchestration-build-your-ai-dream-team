@@ -1,7 +1,7 @@
 # Copilot instructions for this repo
 
 ## Project shape
-- This repo is a GitHub Copilot CLI orchestration exercise, not a framework app. The deliverable is a static dashboard for Mona's team called Project Pulse.
+- This repo is a GitHub Copilot CLI orchestration exercise, not a framework app. The deliverable is a static dashboard for Alex's team called Project Pulse.
 - Main UI files live under `app/`: `index.html` renders the page, `styles.css` contains the product styling, and `project-data.json` provides the dashboard data.
 - The app is expected to run from the `app/` directory via `.vscode/launch.json` using `python3 -m http.server 5500` and then open `http://localhost:%s/index.html`.
 - The repo's custom agent team is defined in `.github/agents/*.agent.md` (`Orchestrator`, `Planner`, `Designer`, `Coder`). Follow the orchestration pattern described in `docs/agent-team.md` and `docs/project-pulse-plan.md`.

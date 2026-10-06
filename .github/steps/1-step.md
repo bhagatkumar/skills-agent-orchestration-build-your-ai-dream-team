@@ -2,7 +2,7 @@
 
 Welcome to **Agent Orchestration: Build Your AI Dream Team**! :robot:
 
-Mona's team needs a small **Project Pulse** dashboard. You will use GitHub Copilot CLI to coordinate a prebuilt team of custom agents that can plan, design, code, and validate the dashboard.
+Alex's team needs a small **Project Pulse** dashboard. You will use GitHub Copilot CLI to coordinate a prebuilt team of custom agents that can plan, design, code, and validate the dashboard.
 
 ### What is the goal?
 
@@ -50,7 +50,7 @@ The custom agent definitions are already available in `.github/agents/`. Your fi
    >
    > ```prompt
    > Inspect .github/agents/ and summarize the custom agent team I will use to build
-   > Mona's Project Pulse dashboard.
+   > Alex's Project Pulse dashboard.
    >
    > Update the replace text in `docs/agent-team.md`.
    > ```
@@ -77,7 +77,7 @@ The custom agent definitions are already available in `.github/agents/`. Your fi
    > Push the commit.
    > ```
 
-1. Mona will check your work and post the next lesson.
+1. Alex will check your work and post the next lesson.
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

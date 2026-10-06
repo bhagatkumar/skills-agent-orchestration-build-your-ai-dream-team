@@ -2,7 +2,7 @@
 
 Great work meeting the agent team! :sparkles:
 
-Now you will ask the Orchestrator to involve the Planner and create an implementation plan for Mona's Project Pulse dashboard.
+Now you will ask the Orchestrator to involve the Planner and create an implementation plan for Alex's Project Pulse dashboard.
 
 ### Why plan before building?
 
@@ -73,7 +73,7 @@ For Project Pulse, the expected app files are:
    > Push the commit.
    > ```
 
-7. Mona will check your work and post the next lesson.
+7. Alex will check your work and post the next lesson.
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

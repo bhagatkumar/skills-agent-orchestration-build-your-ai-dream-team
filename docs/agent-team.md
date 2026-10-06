@@ -1,6 +1,6 @@
 # Agent team
 
-We will use a coordinated custom agent team in GitHub Copilot CLI inside a Codespace to build Mona's Project Pulse dashboard. The team is defined under `.github/agents/` and each agent has a clear role in the workflow.
+We will use a coordinated custom agent team in GitHub Copilot CLI inside a Codespace to build Alex's Project Pulse dashboard. The team is defined under `.github/agents/` and each agent has a clear role in the workflow.
 
 ## Orchestrator
 - Model: Claude Opus 4.7
